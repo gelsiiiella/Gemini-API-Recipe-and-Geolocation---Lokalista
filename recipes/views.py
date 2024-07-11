@@ -2,6 +2,11 @@ import requests
 from django.shortcuts import render
 from geopy.geocoders import Nominatim
 from .forms import RecipeForm
+from django.http import HttpResponse
+
+def root_view(request):
+    return HttpResponse("Welcome to the home page!")
+
 
 def generate_recipe(request):
     if request.method == 'POST':

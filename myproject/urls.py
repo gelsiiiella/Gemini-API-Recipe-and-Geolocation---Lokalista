@@ -16,8 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from recipes import views as recipes_views  # Import the view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recipes/migrations', include('recipes.migrations.urls')),
+    path('recipes/', include('recipes.urls')),  # Include the recipes app URLs
+    path('', recipes_views.root_view, name='root'),  # Root URL pattern
 ]
+
