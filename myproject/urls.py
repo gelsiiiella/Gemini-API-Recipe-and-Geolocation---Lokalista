@@ -23,3 +23,4 @@ urlpatterns = [
     path('recipes/', include('recipes.urls')),  # Include the recipes app URLs
     path('', recipes_views.root_view, name='root'),  # Root URL pattern
 ]
+
